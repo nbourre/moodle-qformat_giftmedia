@@ -80,6 +80,13 @@ class qformat_giftmedia extends qformat_gift {
     }
 
     /**
+     * This plugin takes a zip archieve so we have to remove the utf-8 verification implemented by moodle on 3.11.7 version
+     */
+    public function validate_file(stored_file $file): string {
+        return '';
+    }
+
+    /**
      * This plugin takes a zip archive
      * @return string mime-type of the files that this plugin reads
      */
